@@ -1,12 +1,12 @@
-NAME = Polymorphism
+NAME = Interface_recap
 
 C++ = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O2 -g3
 
 OBJS_DIR = .obj/
 SRC_DIR = srcs/
-HEADERS = include/Animal.hpp include/Dog.hpp include/Cat.hpp include/WrongCat.hpp include/WrongAnimal.hpp 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp 
+HEADERS = include/AMateria.hpp include/Character.hpp include/Cure.hpp include/Ice.hpp include/MateriaSource.hpp include/ICharacter.hpp include/IMateriaSource.hpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o)) 
 
@@ -18,10 +18,10 @@ obj :
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME) : $(OBJS)
-	@echo -n "$(Red)Compilation de Polymorphism ..${NC}" && sleep 0.2
-	@echo -n "$(Red)\rCompilation de Polymorphism ...${NC}"
+	@echo -n "$(Red)Compilation de Interface_recap ..${NC}" && sleep 0.2
+	@echo -n "$(Red)\rCompilation de Interface_recap ...${NC}"
 	$(C++) $^ $(CPPFLAGS) -o $(NAME) && sleep 0.1
-	@echo "$(Green)\r------Compilation de Polymorphism finie !-------${NC}"
+	@echo "$(Green)\r------Compilation de Interface_recap finie !-------${NC}"
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile $(HEADERS)
 	$(C++) $(CPPFLAGS) -c $< -o $@
