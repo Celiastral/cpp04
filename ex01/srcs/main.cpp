@@ -52,7 +52,9 @@ int	main(void)
 	basic->specific_thought("Yipee", 10);
 	Dog *tmp = new Dog();
 	*tmp = *basic;
+	Dog *tmp2(tmp);
 	tmp->tell_specific_thought(10);
+	tmp2->tell_specific_thought(10);
 	delete tmp;
 	delete basic;
 }

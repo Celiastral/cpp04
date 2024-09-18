@@ -17,7 +17,7 @@
 int	main(void)
 {
 	
-	const Animal* meta = new Animal("test");
+	const Animal* meta = new Animal();
 	const WrongAnimal* meta2 = new WrongAnimal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -27,6 +27,9 @@ int	main(void)
 	std::cout << i->getType() << std::endl;
 	std::cout << meta2->getType() << std::endl;
 	std::cout << k->getType() << std::endl;
+	const Cat y = Cat();
+	const Cat z(y);
+	z.makeSound();
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
